@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Personal Todo List</h1>
+        <div class="input-container">
+            <input class="searchbar" type="text" placeholder="Add a new task">
+            <button class="add">Add</button>
+        </div>
+        <ul class="list_container">
+            <!-- List items will be dynamically added here -->
+        </ul>
+        <div class="personalization">
+            <h2>Personalization</h2>
+            <p>Select a theme:</p>
+            <div class="themes">
+                <button class="theme" data-theme="light">Light</button>
+                <button class="theme" data-theme="dark">Dark</button>
+            </div>
+        </div>
+        <div class="dynamic-content">
+            <p>Today's Motivation:</p>
+            <blockquote class="quote"></blockquote>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

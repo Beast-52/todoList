@@ -1,0 +1,206 @@
+/* Light Theme */
+body[data-theme="light"] {
+    --background: #f5f5f5; /* Light theme background color */
+    --text-color: #333; /* Light theme text color */
+    --container-background: #fff; /* Light theme container background color */
+    --container-shadow: rgba(0, 0, 0, 0.1); /* Light theme container shadow color */
+    --input-border: #ccc; /* Light theme input border color */
+    --input-background: #fff; /* Light theme input background color */
+    --input-text: #333; /* Light theme input text color */
+    --button-background: #007bff; /* Light theme button background color */
+    --button-text: #fff; /* Light theme button text color */
+    --list-background: #f9f9f9; /* Light theme list background color */
+    --list-hover-background: #e0e0e0; /* Light theme list hover background color */
+    --checked-text: #888; /* Light theme checked text color */
+    --button-hover-background: #0056b3; /* Light theme button hover background color */
+    --list-box-shadow: rgba(0, 0, 0, 0.1); /* Light theme list box shadow color */
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+    --background: #222; /* Dark theme background color */
+    --text-color: #fff; /* Dark theme text color */
+    --container-background: #111; /* Dark theme container background color */
+    --container-shadow: rgba(255, 255, 255, 0.1); /* Dark theme container shadow color */
+    --input-border: #444; /* Dark theme input border color */
+    --input-background: #444; /* Dark theme input background color */
+    --input-text: #fff; /* Dark theme input text color */
+    --button-background: #007bff; /* Dark theme button background color */
+    --button-text: #fff; /* Dark theme button text color */
+    --list-background: #444; /* Dark theme list background color */
+    --list-hover-background: #666; /* Dark theme list hover background color */
+    --checked-text: #fff; /* Dark theme checked text color */
+    --button-hover-background: #0056b3; /* Dark theme button hover background color */
+    --list-box-shadow: rgba(255, 255, 255, 0.1); /* Dark theme list box shadow color */
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default styles */
+body {
+    background-color: var(--background);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh ;
+    width: 100%;
+}
+
+.container {
+    background-color: var(--container-background);
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--container-shadow);
+    padding: 30px;
+    width: 400px;
+    animation: slideIn 0.5s ease-out;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.searchbar {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--input-border);
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background-color: var(--input-background);
+    color: var(--input-text);
+}
+
+.searchbar:focus {
+    outline: none;
+    border-color: var(--button-background);
+}
+
+.add {
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add:hover {
+    background-color: var(--button-hover-background);
+}
+
+.list_container {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    position: relative;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    background-color: var(--list-background);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--list-box-shadow);
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li:hover {
+    background-color: var(--list-hover-background);
+    transform: translateY(-3px);
+}
+
+.checked {
+    text-decoration: line-through;
+    color: var(--checked-text);
+}
+
+.buttons {
+    display: flex;
+    gap: 7px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.delete,
+.edit,
+.save {
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.delete:hover,
+.edit:hover,
+.save:hover {
+    opacity: 1;
+}
+
+/* Custom animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes deleteAnimation {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.deleted {
+    animation: deleteAnimation 0.3s forwards;
+}
+
+/* Personalization styles */
+.personalization {
+    margin-top: 20px;
+}
+
+.themes {
+    display: flex;
+    gap: 10px;
+}
+
+.theme {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dynamic content styles */
+.dynamic-content {
+    margin-top: 20px;
+}
+
+.quote {
+    font-style: italic;
+}
